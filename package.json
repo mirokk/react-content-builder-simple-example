@@ -11,7 +11,7 @@
   "dependencies": {
     "express": "^4.14.0",
     "react": "^15.3.0",
-    "react-content-builder": "^0.1.5",
+    "react-content-builder": "^0.1.6",
     "react-dom": "^15.3.0"
   },
   "devDependencies": {

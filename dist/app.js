@@ -23985,7 +23985,8 @@
 	var _react2 = _interopRequireDefault(_react);
 	
 	module.exports = function (_ref) {
-		var children = _ref.children;
+		var _ref$children = _ref.children;
+		var children = _ref$children === undefined ? "" : _ref$children;
 		return _react2['default'].createElement('span', { dangerouslySetInnerHTML: { __html: _micromarkdown2['default'].parse(children) } });
 	};
 
@@ -24420,7 +24421,8 @@
 	
 	var _order2 = _interopRequireDefault(_order);
 	
-	exports['default'] = function () {
+	var initialized = false;
+	var initialize = function initialize() {
 		(0, _reactDragula2['default'])({
 			isContainer: function isContainer(el) {
 				return el.classList.contains('editorContainer');
@@ -24471,6 +24473,13 @@
 		}).on('dragend', function (el) {
 			(0, _order2['default'])();
 		});
+	};
+	
+	exports['default'] = function () {
+		if (!initialized) {
+			initialize();
+			initialized = true;
+		}
 	};
 	
 	module.exports = exports['default'];
